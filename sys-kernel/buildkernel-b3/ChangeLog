@@ -1,0 +1,9 @@
+# ChangeLog for sys-kernel/buildkernel-b3
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*buildkernel-b3-1.0.1 (07 Feb 2015)
+
+  07 Feb 2015; sakaki <sakaki@deciban.com> +buildkernel-b3-1.0.1.ebuild:
+  Fixes fn call (echo->show) in underlying.
+
