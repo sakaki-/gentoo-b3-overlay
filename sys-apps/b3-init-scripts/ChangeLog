@@ -1,0 +1,10 @@
+# ChangeLog for sys-apps/b3-init-scripts
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*b3-init-scripts-1.0.1 (08 Feb 2015)
+
+  08 Feb 2015; sakaki <sakaki@deciban.com> +b3-init-scripts-1.0.1.ebuild,
+  +files/marvell-tso-udev-1:
+  Add udev workaround for tso bug in Marvell
+
