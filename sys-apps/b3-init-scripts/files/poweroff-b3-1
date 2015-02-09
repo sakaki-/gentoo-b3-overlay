@@ -1,0 +1,6 @@
+#!/bin/bash
+# Power down the B3
+# Copyright (c) 2015 sakaki <sakaki@deciban.com>
+# License: GPL 3.0+
+# NO WARRANTY
+write-magic 0xdeadbeef && reboot
