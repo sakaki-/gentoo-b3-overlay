@@ -2,6 +2,13 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*b3-init-scripts-1.0.3 (09 Feb 2015)
+
+  09 Feb 2015; sakaki <sakaki@deciban.com> +b3-init-scripts-1.0.3.ebuild,
+  +files/bootled-initd-2:
+  Modified bootled behaviour
+  Green on boot, back to purple on shutdown
+
 *b3-init-scripts-1.0.2 (09 Feb 2015)
 
   09 Feb 2015; sakaki <sakaki@deciban.com> +b3-init-scripts-1.0.2.ebuild,
