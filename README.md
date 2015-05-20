@@ -42,7 +42,7 @@ Then run:
 
     # emaint sync --repo gentoo-b3
 
-If you are running on the stable branch by default, allow **~amd64** keyword files from this repository. Make sure that `/etc/portage/package.accept_keywords` exists, and is a directory. Then issue:
+If you are running on the stable branch by default, allow **~arm** keyword files from this repository. Make sure that `/etc/portage/package.accept_keywords` exists, and is a directory. Then issue:
 
     # echo "*/*::gentoo-b3 ~arm" >> /etc/portage/package.accept_keywords/gentoo-b3-repo
     
