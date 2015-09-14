@@ -3,4 +3,9 @@
 # Copyright (c) 2015 sakaki <sakaki@deciban.com>
 # License: GPL 3.0+
 # NO WARRANTY
-write-magic 0xdeadbeef && reboot
+if [ -x /opt/bubba/bin ]; then
+    /opt/bubba/bin/write-magic 0xdeadbeef && reboot
+else
+    # try default search path
+    write-magic 0xdeadbeef && reboot
+fi

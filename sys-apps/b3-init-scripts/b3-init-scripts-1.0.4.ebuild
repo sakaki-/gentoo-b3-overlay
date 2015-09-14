@@ -20,11 +20,13 @@ S="${WORKDIR}"
 DEPEND=""
 RDEPEND="${DEPEND}
 	>=sys-apps/ethtool-3.12.1
-	>=virtual/udev-215"
+	>=virtual/udev-215
+	>=sys-power/bubba-buttond-1.4-r3"
 
 src_install() {
-	newinitd "${FILESDIR}/bootled-initd-1" "bootled"
+	newinitd "${FILESDIR}/bootled-initd-2" "bootled"
 	newinitd "${FILESDIR}/copynetsetup-initd-1" "copynetsetup"
+	newsbin "${FILESDIR}/poweroff-b3-1" "poweroff-b3"
 	insinto "/etc/udev/rules.d"
 	newins "${FILESDIR}/marvell-tso-udev-1" "50-marvell-fix-tso.rules"
 }
