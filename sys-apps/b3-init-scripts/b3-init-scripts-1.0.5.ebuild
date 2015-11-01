@@ -30,8 +30,8 @@ src_install() {
 	insinto "/etc/udev/rules.d"
 	newins "${FILESDIR}/marvell-tso-udev-1" "50-marvell-fix-tso.rules"
 	exeinto "/usr/local/sbin"
-	doexe "${FILESDIR}/install_on_sda.sh-1" "install_on_sda.sh"
-	doexe "${FILESDIR}/install_on_sda_gpt.sh-1" "install_on_sda_gpt.sh"
+	newexe "${FILESDIR}/install_on_sda.sh-1" "install_on_sda.sh"
+	newexe "${FILESDIR}/install_on_sda_gpt.sh-1" "install_on_sda_gpt.sh"
 }
 
 pkg_postinst() {
