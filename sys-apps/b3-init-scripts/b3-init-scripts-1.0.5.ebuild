@@ -34,14 +34,7 @@ src_install() {
 	newexe "${FILESDIR}/install_on_sda_gpt.sh-1" "install_on_sda_gpt.sh"
 }
 
-pkg_postinst() {
-	elog "You should run:"
-	elog " rc-update add bootled default"
-	elog " rc-update add copynetsetup default"
-	elog "to have these scripts run at boot time"
-}
-
-pkg_config() {
+fix_old_install_scripts_if_present() {
 	if [[ -x "${ROOT}/root/install_on_sda.sh" && ! -L "${ROOT}/root/install_on_sda.sh" ]]; then
 		ewarn "Replacing /root/install_on_sda.sh script with symlink..."
 		rm -f "${ROOT}/root/install_on_sda.sh"
@@ -53,3 +46,12 @@ pkg_config() {
 		ln -s "${ROOT}/usr/local/sbin/install_on_sda_gpt.sh" "${ROOT}/root/install_on_sda_gpt.sh"
 	fi
 }
+
+pkg_postinst() {
+	elog "You should run:"
+	elog " rc-update add bootled default"
+	elog " rc-update add copynetsetup default"
+	elog "to have these scripts run at boot time"
+	fix_old_install_scripts_if_present
+}
+

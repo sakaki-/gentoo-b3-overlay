@@ -3,6 +3,9 @@
 # $Header: $
 
   01 Nov 2015; sakaki <sakaki@deciban.com> b3-init-scripts-1.0.5.ebuild:
+  Map pkg_config to local fn
+
+  01 Nov 2015; sakaki <sakaki@deciban.com> b3-init-scripts-1.0.5.ebuild:
   Fix script install (doexe -> newexe)
 
 *b3-init-scripts-1.0.5 (01 Nov 2015)
