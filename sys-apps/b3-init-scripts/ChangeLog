@@ -4,6 +4,10 @@
 
   05 Nov 2015; sakaki <sakaki@deciban.com> files/install_on_sda.sh-1,
   files/install_on_sda_gpt.sh-1:
+  Ensure /opt is copied not created in install scripts
+
+  05 Nov 2015; sakaki <sakaki@deciban.com> files/install_on_sda.sh-1,
+  files/install_on_sda_gpt.sh-1:
   Fix scripts (missing blank lines)
 
   01 Nov 2015; sakaki <sakaki@deciban.com> b3-init-scripts-1.0.5.ebuild:
