@@ -56,7 +56,7 @@ p
 w" | fdisk /dev/sda >"${LOG}" 2>&1
 
 echo "Step 2 of 5: formatting partitions on /dev/sda..."
-sync
+echo 1 > /sys/block/sda/device/rescan
 mkfs.ext3 -F -L "boot" /dev/sda1 >>"${LOG}" 2>&1
 mkswap -L "swap" /dev/sda2 >>"${LOG}" 2>&1
 mkfs.ext4 -F -L "root" /dev/sda3 >>"${LOG}" 2>&1
