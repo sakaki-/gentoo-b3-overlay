@@ -1,0 +1,2 @@
+# required by mariadb
+>=sys-libs/ncurses-5.9-r100 ~arm

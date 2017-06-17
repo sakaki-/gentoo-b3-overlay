@@ -1,0 +1,34 @@
+# Common build settings for Excito B3
+CFLAGS="-O2 -pipe -march=armv5te"
+CXXFLAGS="${CFLAGS}"
+
+# WARNING: Changing your CHOST is not something that should be done lightly.
+# Please consult http://www.gentoo.org/doc/en/change-chost.xml before changing.
+CHOST="armv5tel-softfloat-linux-gnueabi"
+
+# Default USE flags
+USE="bindist jpeg gif png cups"
+
+# Common directories (NB you may also need to define PORTDIR directly
+# in /etc/portage/make.conf; some scripts look for it there)
+PORTDIR="/usr/portage"
+DISTDIR="${PORTDIR}/distfiles"
+PKGDIR="${PORTDIR}/packages"
+
+# Only free software, please.
+ACCEPT_LICENSE="-* @FREE"
+
+# Use the 'stable' branch
+ACCEPT_KEYWORDS="arm"
+
+# Turn on logging - see http://gentoo-en.vfose.ru/wiki/Gentoo_maintenance.
+PORTAGE_ELOG_CLASSES="info warn error log qa"
+PORTAGE_ELOG_SYSTEM="save"
+# Logs go to /var/log/portage/elog by default - view them with elogviewer.
+
+# Drop root privs when fetching
+FEATURES="userfetch"
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C

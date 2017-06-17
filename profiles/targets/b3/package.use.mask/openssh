@@ -1,0 +1,4 @@
+# HPN patchset causes problems with e.g. large aes{128,192,256}-ctr
+# mode data transfers on ARM
+net-misc/openssh hpn
+

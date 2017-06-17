@@ -1,0 +1,2 @@
+# turn on ldap for apache
+www-servers/apache ldap

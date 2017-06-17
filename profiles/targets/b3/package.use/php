@@ -1,0 +1,7 @@
+# various USE flags for php:
+# - enable Apache mod_php
+# - add dependencies for Roundcube
+# - add dependencies for web calendar
+# - add dependencies for phpmyadmin
+# - replace gdbm support by qdbm
+dev-lang/php apache2 cgi sockets sqlite mysql mysqli imap pdo iconv fileinfo ssl json xml intl exif odbc gd gdbm

@@ -1,0 +1,2 @@
+# allow openvpn to read passwords from a file
+net-vpn/openvpn passwordsave

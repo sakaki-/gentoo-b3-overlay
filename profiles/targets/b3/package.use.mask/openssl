@@ -1,0 +1,2 @@
+# problems with AES ctr mode on ARM (overflow 32-bit vs 64-bit)
+dev-libs/openssl asm
