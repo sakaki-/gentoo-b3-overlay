@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+# Turn on solid LED to show we are alive.
+# Copyright (c) 2015 sakaki <sakaki@deciban.com>
+# License: GPL 3.0+
+# NO WARRANTY
+
+depend() {
+    need sysfs
+}
+
+start() {
+    ebegin "Starting bootled"
+    # turn off red and blue = purple LED
+    echo -n 0 > /sys/class/leds/bubba3\:red\:error/brightness
+    echo -n 0 > /sys/class/leds/bubba3\:blue\:active/brightness
+    # turn on the green LED
+    cat /sys/class/leds/bubba3\:green\:programming/max_brightness > \
+        /sys/class/leds/bubba3\:green\:programming/brightness
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping bootled"
+    # turn off the green LED
+    echo -n 0 > /sys/class/leds/bubba3\:green\:programming/brightness
+    # turn on red and blue = purple LED
+    cat /sys/class/leds/bubba3\:red\:error/max_brightness > \
+        /sys/class/leds/bubba3\:red\:error/brightness
+    cat /sys/class/leds/bubba3\:blue\:active/max_brightness > \
+        /sys/class/leds/bubba3\:blue\:active/brightness
+    eend $?
+}

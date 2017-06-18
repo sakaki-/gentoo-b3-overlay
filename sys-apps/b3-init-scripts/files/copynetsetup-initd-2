@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copy across network settings from fat32 /boot partition
+# if they are provided there (makes setup easier).
+# Copyright (c) 2015 sakaki <sakaki@deciban.com>
+# License: GPL 3.0+
+# NO WARRANTY
+
+depend() {
+    before net dns
+    need localmount
+    after bootmisc
+}
+
+start() {
+    ebegin "Starting copynetsetup"
+    mount /boot
+    # files may have been edited on a Mac or PC
+    # so fix up line endings when we copy across
+    if [ -f /boot/install/net ] ; then
+        sed ':a;N;$!ba;s/\r\n/\n/g;s/\r/\n/g' \
+            </boot/install/net >/etc/conf.d/net
+    fi
+    if [ -f /boot/install/resolv.conf ] ; then
+        sed ':a;N;$!ba;s/\r\n/\n/g;s/\r/\n/g' \
+            </boot/install/resolv.conf >/etc/resolv.conf
+    fi
+    umount /boot
+    eend $?
+}
