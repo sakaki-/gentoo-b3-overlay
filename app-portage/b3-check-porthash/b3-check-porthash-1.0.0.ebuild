@@ -19,7 +19,7 @@ S="${WORKDIR}"
 DEPEND=">=sys-apps/portage-2.3.5"
 RDEPEND="${DEPEND}
 	>=app-shells/bash-4.2
-	>=app-portage/porthash-1.0.3"
+	>=app-portage/porthash-1.0.3[add-pubkey]"
 
 src_install() {
 	exeinto "/etc/portage/repo.postsync.d"
