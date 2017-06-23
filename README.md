@@ -5,6 +5,8 @@ Gentoo overlay for the Excito B3 miniserver.
 
 <img src="https://raw.githubusercontent.com/sakaki-/resources/master/excito/b3/Excito_b3.jpg" alt="Excito B3" width="250px" align="right"/>
 
+* **app-portage/b3-check-porthash** [source](https://github.com/sakaki-/gentoo-b3-overlay/tree/master/app-portage/b3-check-porthash/files)
+  * This provides a repo post-sync hook, `/etc/portage/repo.postsync.d/b3-check-porthash`, which will be activated iff the main gentoo repo is rsync'd to the `rsync://isshoni.org/gentoo-portage-b3 host`; in this case, the repo's integrity will be checked against the signed `repo.hash` "master" hash, and the sync aborted with an error if it differs. This provides assurance that the repo has not been tampered with, despite the use of an unauthenticated transport (`rsync`).
 * **dev-libs/lzo** [upstream](http://www.oberhumer.com/opensource/lzo/download/)
   * At the time of writing, the Gentoo tree contains only version <= 2.08 of dev-libs/lzo. Unfortunately, there is a serious alignment bug ([#757037 on Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=757037#32)) with this library on armv5tel, preventing it working correctly (and inhibiting the use of certain client apps, such as openvpn). The problem is fixed in version 2.09 of the library, for which a placeholder ebuild is provided here.
 * **sys-kernel/buildkernel-b3** [source](https://github.com/sakaki-/buildkernel-b3)
