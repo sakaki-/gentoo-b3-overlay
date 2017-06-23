@@ -22,8 +22,8 @@ ACCEPT_LICENSE="-* @FREE"
 ACCEPT_KEYWORDS="arm"
 
 # Turn on logging - see http://gentoo-en.vfose.ru/wiki/Gentoo_maintenance.
-PORTAGE_ELOG_CLASSES="info warn error log qa"
-PORTAGE_ELOG_SYSTEM="save"
+# PORTAGE_ELOG_CLASSES="info warn error log qa"
+# PORTAGE_ELOG_SYSTEM="save"
 # Logs go to /var/log/portage/elog by default - view them with elogviewer.
 
 # Drop root privs when fetching
