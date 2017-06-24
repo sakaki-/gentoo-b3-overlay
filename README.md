@@ -11,6 +11,8 @@ Gentoo overlay for the Excito B3 miniserver.
   * At the time of writing, the Gentoo tree contains only version <= 2.08 of dev-libs/lzo. Unfortunately, there is a serious alignment bug ([#757037 on Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=757037#32)) with this library on armv5tel, preventing it working correctly (and inhibiting the use of certain client apps, such as openvpn). The problem is fixed in version 2.09 of the library, for which a placeholder ebuild is provided here.
 * **sys-kernel/buildkernel-b3** [source](https://github.com/sakaki-/buildkernel-b3)
   * Provides a script (**buildkernel-b3**(8)) to build a bootable Gentoo Linux kernel for the Excito B3, targeting either HDD or USB deployment. Can be used on the B3 directly, or on a Gentoo PC (when cross-compiling via `crossdev`). A manpage is included.
+* **sys-kernel/gentoo-b3-kernel-bin** [binary](https://github.com/sakaki-/gentoo-b3-kernel)
+  * Provides a binary kernel package for the B3 miniserver; a new ebuild is automatically created to mirror each release of [gentoo-b3-kernel](https://github.com/sakaki-/gentoo-b3-kernel).
 * **sys-apps/b3-init-scripts** [source](https://github.com/sakaki-/gentoo-b3-overlay/tree/master/sys-apps/b3-init-scripts/files)
   * Provides a set of simple init scripts for the B3 (to turn on the LED on boot, copy across network settings when booting etc.).
 * **net-wireless/hostapd** [upstream](http://hostap.epitest.fi)
