@@ -9,6 +9,7 @@
 # These profiles will augment those already present in the
 # core gentoo repo
 
-# ARM Profiles (currenly only one)
+# ARM Profiles
 arm            default/linux/arm/13.0/armv5te/b3                exp
+arm            default/linux/arm/17.0/armv5te/b3                exp
 
