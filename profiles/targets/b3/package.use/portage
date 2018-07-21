@@ -1,0 +1,3 @@
+# use porthash for now, will switch over later once all
+# user nodes converted
+sys-apps/portage -rsync-verify
