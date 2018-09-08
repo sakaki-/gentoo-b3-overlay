@@ -1,2 +1,2 @@
 # allow most modern version, for hardlink repo handling etc
-sys-apps/portage ~ppc
+sys-apps/portage ~arm
