@@ -1,5 +1,0 @@
-# version 2 requires -bindist on dev-libs/openssl
-# feel free to override this if building with -bindist locally
->=dev-python/cryptography-2.0.0
-# packages that require >=dev-python/cryptography-2.0.0
->=dev-python/pyopenssl-17.2.0
