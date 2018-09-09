@@ -1,0 +1,3 @@
+# allow gemato on arm, for rsync-verify in portage
+app-portage/gemato ~arm
+
