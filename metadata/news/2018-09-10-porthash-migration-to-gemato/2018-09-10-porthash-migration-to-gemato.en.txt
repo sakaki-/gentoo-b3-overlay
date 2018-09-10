@@ -1,0 +1,45 @@
+Title: porthash migration to gemato
+Author: sakaki <sakaki@deciban.com>
+Content-Type: text/plain
+Posted: 2018-09-10
+Revision: 1
+News-Item-Format: 2.0
+Display-If-Keyword: arm
+Display-If-Installed: app-portage/b3-check-porthash
+
+Introduction
+------------
+
+If you are subscribed to the rsync mirror at
+rsync://isshoni.org/gentoo-portage-b3, and using the automatic signed
+hash checking provided by app-portage/b3-check-porthash, please note
+that I am no longer publishing repo.hash and repo.hash.asc signature
+files for this mirror.
+
+This is because Gentoo itself now contains a signed repository checker
+(gemato), used automatically by sys-apps/portage (with rsync-verify USE
+flag). Further, with >=portage-2.3.42, repos that do not pass the gemato
+check (against official Gentoo public keys) are quarantined.
+
+As such, there is no further need for my privately generated signed
+hashes (and indeed from gemato's POV they pollute the tree), so I am
+withdrawing them.
+
+Action Required
+---------------
+
+To prevent your genup runs failing in future, issue the following
+commands, in order, on your B3, as root:
+
+b3 ~ # emaint sync --repo gentoo-b3
+b3 ~ # emerge --oneshot --verbose sys-apps/portage
+b3 ~ # emerge --depclean app-portage/b3-check-porthash
+
+The first ensures you have the rsync-verify USE flag, and ~arm
+accept_keywords set for sys-apps/portage. The second updates Portage
+itself (to a signature-checking variant). The third removes the
+/etc/portage/repo.postsync.d hook that runs porthash automatically.
+
+At your option, you may then also remove app-portage/porthash itself.
+
+Best, sakaki <sakaki@deciban.com>
